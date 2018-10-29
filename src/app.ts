@@ -2,11 +2,8 @@ import { JsonRules } from "dotup-ts-json-rules";
 
 class Startup {
   public static main() {
-    this.TestJsonRules(new JsonRules());
-  }
 
-
-  static TestJsonRules(jsonRules: JsonRules) {
+    const jsonRules = new JsonRules();
 
     const data = Startup.getSampleData();
 
@@ -28,13 +25,13 @@ class Startup {
     }
   }
 
-  static getSampleData(){
+  static getSampleData() {
     return {
       "Source": {
         "Driver": {
           "Age": 45,
           "Gender": 1,
-          "Name":"Peter"
+          "Name": "Peter"
         },
         "Bike": {
           "Ccm": 250,
@@ -62,8 +59,8 @@ class Startup {
           },
           "rules": {
             "Driver": {
-              "Name":{
-                "equals":"Peter"
+              "Name": {
+                "equals": "Peter"
               },
               "Gender": {
                 "min": 1,
