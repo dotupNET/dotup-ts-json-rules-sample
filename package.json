@@ -27,6 +27,7 @@
   },
   "dependencies": {
     "dotup-ts-json-rules": "0.0.5",
+    "dotup-ts-logger": "0.0.1",
     "rimraf": "^2.6.2"
   }
 }

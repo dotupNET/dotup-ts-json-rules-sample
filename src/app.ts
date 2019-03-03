@@ -1,7 +1,11 @@
 import { JsonRules } from "dotup-ts-json-rules";
+import { LoggerFactory, ILogger } from "dotup-ts-logger";
 
 class Startup {
   public static main() {
+
+    const lf = new LoggerFactory();
+    const logger = lf.CreateDebugLogger('main');
 
     const jsonRules = new JsonRules();
 
@@ -16,12 +20,12 @@ class Startup {
     try {
       const jsonIsValid = jsonRules.IsValid(source, ruleSet);
       if (jsonIsValid) {
-        console.log('valid');
+        logger.debug('valid');
       } else {
-        console.log('invalid');
+        logger.debug('invalid');
       }
     } catch (error) {
-      console.log(error.message);
+      logger.error(error.message);
     }
   }
 
